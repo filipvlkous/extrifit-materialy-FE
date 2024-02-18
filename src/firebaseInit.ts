@@ -4,12 +4,12 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBCw6QLkuX9J3m4JXr4Nm41EyLBYq6rF-A",
-    authDomain: "extrifitmaterials.firebaseapp.com",
-    projectId: "extrifitmaterials",
-    storageBucket: "extrifitmaterials.appspot.com",
-    messagingSenderId: "779450563949",
-    appId: "1:779450563949:web:4f5d8c115dae80837a6e64"
+    apiKey: import.meta.env.VITE_API_KEY,
+    authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_PROJECT_IT,
+    storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGING_ID,
+    appId: import.meta.env.VITE_APP_ID
   };
   
   // Initialize Firebase

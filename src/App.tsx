@@ -22,7 +22,7 @@ interface ProtectedRouteProps {
 }
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
-  const currentUid = auth.currentUser?.uid == "aUWlfwqTs2OcpK6iKJJGuFpM1l72";
+  const currentUid = auth.currentUser?.uid == import.meta.env.VITE_USER_ID;
 
   if (!currentUid) {
     return <Navigate to="/500_error" replace />;
@@ -31,7 +31,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
 };
 
 const UserRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
-  const currentUid = auth.currentUser?.uid != "aUWlfwqTs2OcpK6iKJJGuFpM1l72";
+  const currentUid = auth.currentUser?.uid != import.meta.env.VITE_USER_ID;
 
   if (!currentUid) {
     return <Navigate to="/" replace />;
@@ -107,7 +107,7 @@ function App() {
         const token = await user.getIdToken();
         await dispatch(saveToken(token));
         dispatch(fetchPosts());
-        if (user.uid == "aUWlfwqTs2OcpK6iKJJGuFpM1l72") {
+        if (user.uid == import.meta.env.VITE_USER_ID) {
           dispatch(fetchUsers());
         }
         setSigned(true);

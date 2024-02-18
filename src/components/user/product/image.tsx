@@ -28,7 +28,7 @@ export default function ImageContainerUser({
           responseType: "blob",
           params: {
             id: id,
-          }, // Important: responseType must be 'blob'
+          },
         }
       );
 
